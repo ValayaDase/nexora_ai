@@ -11,7 +11,6 @@ export const Hero: React.FC = () => {
   // --- STRICT ENTRY ANIMATION (< 500ms, Zero Global Re-flows) ---
   useEffect(() => {
     if (contentRef.current && visualRef.current) {
-      // Small timeout to ensure DOM is painted, then trigger CSS transitions
       const timer = setTimeout(() => {
         contentRef.current?.classList.remove('opacity-0', 'translate-y-10');
         contentRef.current?.classList.add('opacity-100', 'translate-y-0');
@@ -71,14 +70,14 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Right column: Floating interactive visual elements */}
+        
         <div 
           ref={visualRef}
-          className="lg:col-span-5 relative w-full h-[380px] sm:h-[450px] flex items-center justify-center lg:justify-end opacity-0 translate-y-10 transition-all duration-[500ms] ease-out delay-100"
+          className="hidden lg:flex lg:col-span-5 relative w-full h-[380px] sm:h-[450px] items-center justify-center lg:justify-end opacity-0 translate-y-10 transition-all duration-[500ms] ease-out delay-100"
         >
           
           {/* Card 1: Main workflow execution log */}
-          <GlassContainer className="w-[85%] sm:w-[360px] p-5 border-[#F1F6F4]/10 bg-[#172B36]/60 shadow-[0_20px_50px_-12px_rgba(17,76,90,0.5)] animate-float-medium select-none z-20">
+          <GlassContainer className="w-[360px] p-5 border-[#F1F6F4]/10 bg-[#172B36]/60 shadow-[0_20px_50px_-12px_rgba(17,76,90,0.5)] animate-float-medium select-none z-20">
             <div className="flex items-center justify-between border-b border-[#F1F6F4]/10 pb-3 mb-4">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#FF9932] animate-pulse" />
@@ -117,11 +116,10 @@ export const Hero: React.FC = () => {
           </GlassContainer>
 
           {/* Card 2: Micro graph visual */}
-          <GlassContainer className="absolute left-4 top-10 w-[140px] sm:w-[170px] p-4 border-[#F1F6F4]/10 bg-[#114C5A]/40 animate-float-slow z-10">
+          <GlassContainer className="absolute left-4 top-10 w-[170px] p-4 border-[#F1F6F4]/10 bg-[#114C5A]/40 animate-float-slow z-10">
             <span className="text-[10px] text-[#D9E8E2]/60 font-semibold tracking-wider uppercase block font-mono">Tokens/sec</span>
             <div className="text-xl font-extrabold text-[#FFC801] mt-1 font-mono">2.4k</div>
             
-            {/* Simple CSS simulated chart bar with Strict Colors */}
             <div className="flex items-end gap-1.5 h-12 mt-4">
               <div className="w-full bg-[#FF9932]/40 rounded-sm h-[30%] animate-pulse" />
               <div className="w-full bg-[#FF9932]/60 rounded-sm h-[60%]" />
@@ -132,7 +130,7 @@ export const Hero: React.FC = () => {
           </GlassContainer>
 
           {/* Card 3: Model select float status */}
-          <GlassContainer className="absolute right-4 bottom-12 w-[160px] sm:w-[190px] p-4 border-[#F1F6F4]/10 bg-[#172B36]/80 animate-float-fast z-30">
+          <GlassContainer className="absolute right-4 bottom-12 w-[190px] p-4 border-[#F1F6F4]/10 bg-[#172B36]/80 animate-float-fast z-30">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-[#FFC801]/10 flex items-center justify-center border border-[#FFC801]/20">
                 <svg className="w-4 h-4 text-[#FFC801]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

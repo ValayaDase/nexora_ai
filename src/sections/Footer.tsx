@@ -56,23 +56,24 @@ export const Footer: React.FC = () => {
               className="flex items-center gap-2 group outline-none"
               aria-label="Nexora AI Homepage"
             >
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-violet-600 to-indigo-600 flex items-center justify-center shadow-lg">
-                <svg
-                  className="w-4 h-4 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2.5}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-forsythia via-deep-saffron to-nocturnal-expedition flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+            <svg
+              className="w-5 h-5 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              />
+            </svg>
+          </div>
               <span className="font-semibold text-base tracking-tight text-white select-none">
-                nexora<span className="text-violet-400">.ai</span>
+                nexora<span className="text-[#FFC801]">.ai</span>
               </span>
             </a>
 
